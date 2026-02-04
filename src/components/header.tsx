@@ -3,7 +3,12 @@ export function Header() {
     <header className="bg-black sticky text-white top-1 z-50">
       <nav className="px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div
+            className="flex items-center gap-4"
+            onClick={() =>
+              (window.open('https://github.com/D0M1N1Kx'))
+            }
+          >
             <img
               src="https://avatars.githubusercontent.com/u/98649184?s=400&v=4"
               alt="Profile"
