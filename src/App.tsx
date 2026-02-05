@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { Header } from './components/header'
 
 function App() {
   return (
     <>
-      <h1 className='font-bold text-blue-600 underline'>Vite + React</h1>
+      <Header></Header>
     </>
   )
 }
