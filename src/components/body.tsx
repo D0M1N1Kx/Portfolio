@@ -7,10 +7,10 @@ export function Body() {
           <img
             src="https://avatars.githubusercontent.com/u/98649184?s=400&v=4"
             alt="Profile"
-            className="w-52 h-52 rounded-full border-0"
+            className="w-52 h-52 rounded-full shadow-[0_0_30px_rgba(59,130,246,0.9)] hover:shadow-[0_0_45px_rgba(59,130,246,0.9)] transition-shadow duration-300"
           /><br></br>
           <div>
-            <h1 className="text-4xl font-bold mt-4">Milkovics Dominik</h1>
+            <h1 className="text-4xl font-bold mt-4 text-center">Milkovics Dominik</h1>
           </div>
         </div>
       </div>
