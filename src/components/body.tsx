@@ -1,3 +1,5 @@
+import { SkillCard } from "./skillCard";
+
 export function Body() {
   const skills = [
     {
@@ -49,6 +51,13 @@ export function Body() {
         <h1 className="text-sky-600 font-bold text-4xl text-center mt-4">
           Skills
         </h1>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6 mb-8">
+          {skills.map((skill, index) => (
+            <li key={index} className="text-center">
+              <SkillCard items={skill.items} title={skill.title}/>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
