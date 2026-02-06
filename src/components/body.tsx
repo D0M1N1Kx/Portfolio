@@ -30,6 +30,14 @@ export function Body() {
     },
   ];
 
+  const projects = [
+    {
+      title: 'Vehicle Cost Tracker',
+      description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
+      img_path: '',
+    }
+  ];
+
   return (
     <>
       <div className="bg-black min-h-screen w-full">
@@ -55,6 +63,17 @@ export function Body() {
           {skills.map((skill, index) => (
             <li key={index} className="text-center">
               <SkillCard items={skill.items} title={skill.title}/>
+            </li>
+          ))}
+        </ul>
+        <div className="h-0.5 bg-blue-800 w-full mb-3 mt-10"></div>
+        <h1 className="text-sky-600 font-bold text-4xl text-center mt-4">
+          Projects
+        </h1>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6 mb-8">
+          {skills.map((skill, index) => (
+            <li key={index} className="text-center">
+              
             </li>
           ))}
         </ul>
