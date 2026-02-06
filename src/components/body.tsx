@@ -54,7 +54,7 @@ export function Body() {
 
   return (
     <>
-      <div className="bg-black min-h-screen w-full">
+      <div className="bg-black w-full pb">
         <div className="h-2 bg-gray-600 w-full mb-3"></div>
         <div className="flex flex-col items-center justify-center gap-2 mt-8">
           <img
