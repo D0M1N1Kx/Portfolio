@@ -1,3 +1,4 @@
+import { ProjectCard } from "./projectCard";
 import { SkillCard } from "./skillCard";
 
 export function Body() {
@@ -34,7 +35,20 @@ export function Body() {
     {
       title: 'Vehicle Cost Tracker',
       description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: '',
+      img_path: 'src/assets/mobile_app.jpg',
+      link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
+    },
+    {
+      title: 'Vehicle Cost Tracker',
+      description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
+      img_path: 'src/assets/mobile_app.jpg',
+      link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
+    },
+    {
+      title: 'Vehicle Cost Tracker',
+      description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
+      img_path: 'src/assets/mobile_app.jpg',
+      link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
     }
   ];
 
@@ -71,9 +85,9 @@ export function Body() {
           Projects
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6 mb-8">
-          {skills.map((skill, index) => (
+          {projects.map((project, index) => (
             <li key={index} className="text-center">
-              
+              <ProjectCard title={project.title} description={project.description} img_path={project.img_path} link={project.link}/>
             </li>
           ))}
         </ul>
