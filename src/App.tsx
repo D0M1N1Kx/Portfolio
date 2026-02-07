@@ -6,7 +6,7 @@ import { Footer } from './components/footer'
 function App() {
   return (
     <>
-      <div className='bg-black min-h-screen'>
+      <div className='min-h-screen bg-black/90'>
         <Header></Header>
         <Body></Body>
         <Footer></Footer>

@@ -54,8 +54,8 @@ export function Body() {
 
   return (
     <>
-      <div className="bg-black w-full pb">
-        <div className="h-2 bg-gray-600 w-full mb-3"></div>
+      <div className="w-full pb bg-gradient-to-r from-gray-800/25 to-blue-700/25">
+        <div className="h-2 bg-transparent w-full mb-3"></div>
         <div className="flex flex-col items-center justify-center gap-2 mt-8">
           <img
             src="https://avatars.githubusercontent.com/u/98649184?s=400&v=4"
@@ -84,7 +84,7 @@ export function Body() {
         <h1 className="text-sky-600 font-bold text-4xl text-center mt-4">
           Projects
         </h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6 mb-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6">
           {projects.map((project, index) => (
             <li key={index} className="text-center">
               <ProjectCard title={project.title} description={project.description} img_path={project.img_path} link={project.link}/>
