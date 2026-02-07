@@ -54,7 +54,7 @@ export function Body() {
 
   return (
     <>
-      <div className="w-full pb bg-gradient-to-r from-gray-800/25 to-blue-700/25">
+      <div className="w-full pb bg-gradient-to-r from-gray-800/25 to-blue-700/25" id="home">
         <div className="h-2 bg-transparent w-full mb-3"></div>
         <div className="flex flex-col items-center justify-center gap-2 mt-8">
           <img
@@ -64,7 +64,7 @@ export function Body() {
           />
           <br></br>
           <div>
-            <h1 className="text-3xl text-center md:text-4xl lg:text-5xl font-bold text-sky-600 drop-shadow-[0_0_15px_rgba(96,165,250,0.8)] hover:drop-shadow-[0_0_30px_rgba(96,165,250,0.85)] transition-all duration-300 mt-2">
+            <h1 className="text-3xl text-center md:text-4xl lg:text-5xl font-bold text-sky-600 drop-shadow-[0_0_15px_rgba(96,165,250,0.8)] hover:drop-shadow-[0_0_30px_rgba(96,165,250,0.85)] transition-all duration-300 mt-2" id="skills">
               Milkovics Dominik
             </h1>
           </div>
@@ -73,7 +73,7 @@ export function Body() {
         <h1 className="text-sky-600 font-bold text-4xl text-center mt-4">
           Skills
         </h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6 mb-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6 mb-8" id="projects">
           {skills.map((skill, index) => (
             <li key={index} className="text-center">
               <SkillCard items={skill.items} title={skill.title}/>
@@ -84,7 +84,7 @@ export function Body() {
         <h1 className="text-sky-600 font-bold text-4xl text-center mt-4">
           Projects
         </h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6" id="contact">
           {projects.map((project, index) => (
             <li key={index} className="text-center">
               <ProjectCard title={project.title} description={project.description} img_path={project.img_path} link={project.link}/>
