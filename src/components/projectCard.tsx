@@ -19,7 +19,7 @@ export function ProjectCard({
         <span className="font-bold text-base">{description}</span>
         <br></br>
         <button
-          className="border rounded-lg bg-blue-500 border-blue-600 px-1 py-1 mt-4 mb-3"
+          className="rounded-2xl px-4 py-2 mt-4 mb-3 font-semibold bg-blue-600 text-white border-blue-700 hover:bg-blue-700/90 hover:scale-105 transition-all duration-300"
           onClick={() => {
             window.open(link);
           }}
