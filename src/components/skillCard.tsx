@@ -6,7 +6,7 @@ type SkillCardParameters = {
 export function SkillCard({ title, items }: SkillCardParameters) {
   return (
     <>
-      <div className="border-2 border-sky-700 w-86 h-40 bg-blue-600/15 rounded-lg">
+      <div className="border-2 border-sky-700 w-86 h-40 bg-blue-600/15 rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
         <h3 className="text-center font-bold text-blue-500 text-2xl">
           {title}
         </h3>
