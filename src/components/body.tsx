@@ -60,7 +60,7 @@ export function Body() {
           <img
             src="https://avatars.githubusercontent.com/u/98649184?s=400&v=4"
             alt="Profile"
-            className="w-52 h-52 rounded-full shadow-[0_0_30px_rgba(59,130,246,0.9)] hover:shadow-[0_0_45px_rgba(59,130,246,0.9)] transition-shadow duration-300"
+            className="w-52 h-52 rounded-full shadow-[0_0_30px_rgba(59,130,246,0.9)] hover:shadow-[0_0_45px_rgba(59,130,246,0.9)] transition-shadow duration-300 animate-bounce-small"
           />
           <br></br>
           <div>
