@@ -32,17 +32,17 @@ export function Footer() {
             <br />
             <div className="flex flex-row gap-2">
               <SocialCard
-                img_path="src/assets/github-sign.png"
+                img_path="/images/github-sign.png"
                 link="https://github.com/D0M1N1Kx"
               />
               <br />
               <SocialCard
-                img_path="src/assets/linkedin.png"
+                img_path="/images/linkedin.png"
                 link="https://www.linkedin.com/in/dominik-milkovics-ab0359341/"
               />
               <br />
               <SocialCard
-                img_path="src/assets/facebook.png"
+                img_path="/images/facebook.png"
                 link="https://www.facebook.com/dominik.milkovics.2025/"
               />
             </div>

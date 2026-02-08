@@ -35,19 +35,19 @@ export function Body() {
     {
       title: 'Vehicle Cost Tracker',
       description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: 'src/assets/mobile_app.jpg',
+      img_path: '/images/mobile_app.jpg',
       link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
     },
     {
       title: 'Vehicle Cost Tracker',
       description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: 'src/assets/mobile_app.jpg',
+      img_path: '/images/mobile_app.jpg',
       link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
     },
     {
       title: 'Vehicle Cost Tracker',
       description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: 'src/assets/mobile_app.jpg',
+      img_path: '/images/mobile_app.jpg',
       link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
     }
   ];
