@@ -4,33 +4,28 @@ export function Footer() {
   return (
     <>
       <footer className="bg-black pb-4 pt-4 border-t border-blue-600">
-        <div className="flex gap-12 justify-evenly px-8">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-evenly px-4 md:px-8">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-blue-500">About Me</h1>
-            <br />
-            <span>📍 Subotica, Serbia</span>
-            <br />
-            <span>🎓 Electronics and Information Technology Technician</span>
-            <br />
-            <span>🏫 Ivan Saric Technicka Skola</span>
-            <br />
-            <span>💼 Full-Stack Developer</span>
-            <br />
+            <h1 className="text-xl md:text-2xl font-bold text-blue-500">About Me</h1>
+            <div className="mt-1 space-y-2">
+              <span>📍 Subotica, Serbia</span><br/>
+              <span>🎓 Electronics and Information Technology Technician</span><br/>
+              <span>🏫 Ivan Saric Technicka Skola</span><br/>
+              <span>💼 Full-Stack Developer</span><br/>
+            </div>
           </div>
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-blue-500">Contact</h1>
-            <br />
-            <span>✉️ milkovicd32@gmail.com</span>
-            <br />
-            <span>📱 +381 69 123 8859</span>
-            <br />
-            <span>💬 dominik17_.</span>
-            <br />
+            <h1 className="text-xl md:text-2xl font-bold text-blue-500">Contact</h1>
+            <div className="mt-1 space-y-2">
+              <span className="break-all">✉️ milkovicsd32@gmail.com</span><br/>
+              <span>📱 +381 69 123 8859</span><br/>
+              <span>💬 dominik17_.</span><br/>
+            </div>
           </div>
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-blue-500">Follow Me</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-blue-500">Follow Me</h1>
             <br />
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-4 justify-center mt-1">
               <SocialCard
                 img_path="/images/github-sign.png"
                 link="https://github.com/D0M1N1Kx"
