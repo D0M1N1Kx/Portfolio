@@ -35,7 +35,7 @@ export function Body() {
     {
       title: 'Vehicle Cost Tracker',
       description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: '/images/mobile_app.jpg',
+      img_path: '/images/vehicle-cost-tracker.png',
       link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
     },
     {
