@@ -39,16 +39,16 @@ export function Body() {
       link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
     },
     {
-      title: 'Vehicle Cost Tracker',
-      description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: '/images/mobile_app.jpg',
-      link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
+      title: 'Courier App',
+      description: 'Courier management system connected to an MTA server.',
+      img_path: '/images/courier-app.png',
+      link: 'https://github.com/D0M1N1Kx/courier-app',
     },
     {
-      title: 'Vehicle Cost Tracker',
-      description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
-      img_path: '/images/mobile_app.jpg',
-      link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
+      title: 'Coming soon ...',
+      description: 'Next project is under development.',
+      img_path: '/images/no-project.jpg',
+      link: 'https://github.com/D0M1N1Kx',
     }
   ];
 
