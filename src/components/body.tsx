@@ -46,10 +46,10 @@ export function Body() {
       link: 'https://github.com/D0M1N1Kx/courier-app',
     },
     {
-      title: 'Coming soon ...',
-      description: 'Next project is under development.',
-      img_path: '/images/no-project.jpg',
-      link: 'https://github.com/D0M1N1Kx',
+      title: 'Anonym Chat',
+      description: 'A chat application where you can open and share a chat with others with whom you can chat anonymously.',
+      img_path: '/images/anonymchat.png',
+      link: 'https://github.com/D0M1N1Kx/AnonymChat',
     }
   ];
 

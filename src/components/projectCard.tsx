@@ -5,20 +5,20 @@ type projectCardParameters = {
   link: string;
 };
 
-export function ProjectCard({
-  title,
-  description,
-  img_path,
-  link,
-}: projectCardParameters) {
+export function ProjectCard({title, description, img_path, link}: projectCardParameters)
+{
   return (
       <>
-        <div className="flex flex-col justify-between border-b-2 border-sky-700 w-full sm:w-86 min-h-[400px] m-1 bg-blue-600/15 rounded-lg mb-4 hover:border-b-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer overflow-hidden">
+        <div className="flex flex-col justify-between border-b-2 border-sky-700 w-full sm:w-86 min-h-[440px] m-1 bg-blue-600/15 rounded-lg mb-4 hover:border-b-4 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer overflow-hidden">
 
           <div>
-            <div className="h-44 overflow-hidden">
-              <img src={img_path} className="rounded-t-lg w-full h-full object-cover"/>
+            <div className="w-full aspect-video overflow-hidden bg-black/20">
+              <img
+                  src={img_path}
+                  className="rounded-t-lg w-full h-full object-cover"
+              />
             </div>
+
             <div className="p-4">
               <h1 className="text-center font-bold text-2xl mb-2">{title}</h1>
               <p className="text-base text-gray-200 line-clamp-3">{description}</p>
