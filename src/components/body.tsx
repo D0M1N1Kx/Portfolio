@@ -26,6 +26,7 @@ export function Body() {
         "EF Core",
         "NestJs",
         "Node.js",
+        "JWT Bearer",
         "MSSQL",
         "PostgreSQL",
         "MySQL",
