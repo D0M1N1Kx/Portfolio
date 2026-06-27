@@ -60,8 +60,11 @@ export function Body() {
       title: "Operating Systems",
       items: [
           "Windows 11",
+          "Windows 10",
           "Ubuntu",
-          "Fedora"
+          "Kubuntu",
+          "Fedora",
+          "Nobara"
       ],
     }
   ];
