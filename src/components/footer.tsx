@@ -1,4 +1,4 @@
-import { SocialCard } from "./socialCard";
+import { Github, Linkedin, Facebook } from 'react-bootstrap-icons';
 
 export function Footer() {
   return (
@@ -24,22 +24,31 @@ export function Footer() {
           </div>
           <div className="text-center">
             <h1 className="text-xl md:text-2xl font-bold text-blue-500">Follow Me</h1>
-            <br />
             <div className="flex flex-row gap-4 justify-center mt-1">
-              <SocialCard
-                img_path="/images/github-sign.png"
-                link="https://github.com/D0M1N1Kx"
-              />
-              <br />
-              <SocialCard
-                img_path="/images/linkedin.png"
-                link="https://www.linkedin.com/in/dominik-milkovics-ab0359341/"
-              />
-              <br />
-              <SocialCard
-                img_path="/images/facebook.png"
-                link="https://www.facebook.com/dominik.milkovics.2025/"
-              />
+              <a
+                  href="https://github.com/D0M1N1Kx"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-3 bg-blue-600/10 border border-blue-700 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+              >
+                <Github size={22} />
+              </a>
+              <a
+                  href="https://www.linkedin.com/in/dominik-milkovics-ab0359341/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-3 bg-blue-600/10 border border-blue-700 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+              >
+                <Linkedin size={22} />
+              </a>
+              <a
+                  href="https://www.facebook.com/dominik.milkovics.2025/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-3 bg-blue-600/10 border border-blue-700 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+              >
+                <Facebook size={22} />
+              </a>
             </div>
             <br />
           </div>
