@@ -25,11 +25,44 @@ export function Body() {
         "ASP NET Core Minimal API",
         "EF Core",
         "NestJs",
+        "Node.js",
         "MSSQL",
         "PostgreSQL",
         "MySQL",
       ],
     },
+    {
+      title: "Programming Languages",
+      items: [
+        "C#",
+        "Typescript",
+        "Dart",
+        "Javascript",
+        "Python",
+        "C",
+      ],
+    },
+    {
+      title: "Tools",
+      items: [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "DBeaver CE",
+        "Rider",
+        "WebStorm",
+        "Visual Studio Code",
+        "ClickUp",
+      ],
+    },
+    {
+      title: "Operating Systems",
+      items: [
+          "Windows 11",
+          "Ubuntu",
+          "Fedora"
+      ],
+    }
   ];
 
   const projects = [
@@ -37,19 +70,62 @@ export function Body() {
       title: 'Vehicle Cost Tracker',
       description: 'It\'s an Android application, you can track your vehicles costs, repairs, costs.',
       img_path: '/images/vehicle-cost-tracker.png',
-      link: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
+      source: 'https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker',
+      items: [
+          "Mobile App",
+          "Flutter",
+          "Dart",
+      ]
     },
     {
       title: 'Courier App',
       description: 'Courier management system connected to an MTA server.',
       img_path: '/images/courier-app.png',
-      link: 'https://github.com/D0M1N1Kx/courier-app',
+      source: 'https://github.com/D0M1N1Kx/courier-app',
+      link: 'https://courier.zenithfactory.dev/',
+      items: [
+        "Web",
+          "React + Typescript",
+          "NestJs",
+          "PostgreSQL",
+      ]
     },
     {
       title: 'Anonym Chat',
       description: 'A chat application where you can open and share a chat with others with whom you can chat anonymously.',
       img_path: '/images/anonymchat.png',
-      link: 'https://github.com/D0M1N1Kx/AnonymChat',
+      source: 'https://github.com/D0M1N1Kx/AnonymChat',
+      items: [
+        "Mobile App",
+        "Flutter",
+        "Dart",
+        "NestJs",
+      ]
+    },
+    {
+      title: 'Rycloon',
+      description: 'A social media platform designed for gamers with tailored features, where I work as a full-stack developer.',
+      img_path: '/images/rycloon.png',
+      link: 'https://rycloon.com/',
+      items: [
+        "Web",
+          "React + Typescript",
+          "ASP NET Core",
+          "Node.js",
+          "MySQL",
+      ]
+    },
+    {
+      title: 'Mines Game',
+      description: 'Modern, web-based Minesweeper game built using React and TypeScript.',
+      img_path: '/images/mines-game.png',
+      source: 'https://github.com/ZenithFactory/mines-game',
+      link: 'https://minesgame.zenithfactory.dev/',
+      items: [
+        "Web",
+        "React + Typescript",
+        "Node.js",
+      ]
     }
   ];
 
@@ -85,10 +161,10 @@ export function Body() {
         <h1 className="text-sky-600 font-bold text-4xl text-center mt-4">
           Projects
         </h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 list-none ml-6 mr-6" id="contact">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center justify-items-center gap-4 mt-8 list-none mx-6" id="contact">
           {projects.map((project, index) => (
-            <li key={index} className="text-center">
-              <ProjectCard title={project.title} description={project.description} img_path={project.img_path} link={project.link}/>
+            <li key={index} className="w-full flex text-center">
+              <ProjectCard title={project.title} description={project.description} img_path={project.img_path} link={project.link} source={project.source} items={project.items} />
             </li>
           ))}
         </ul>
