@@ -1,3 +1,5 @@
+import { Github, BoxArrowUpRight } from 'react-bootstrap-icons';
+
 type projectCardParameters = {
   title: string;
   description: string;
@@ -43,23 +45,23 @@ export function ProjectCard({title, description, img_path, link, source, items}:
           <div className="px-4 pb-4 flex flex-row justify-evenly">
             {source != null && (
               <button
-                  className="w-full sm:w-auto rounded-xl px-4 py-2 font-semibold bg-black text-white border-blue-700 hover:bg-neutral-800 transition-all duration-300"
+                  className="w-full sm:w-auto rounded-xl px-4 py-2 flex items-center gap-2 font-semibold bg-black text-white border-blue-700 hover:bg-neutral-800 transition-all duration-300"
                   onClick={() => {
                     window.open(source);
                   }}
               >
-                Source
+                <Github/> Source
               </button>
             )}
 
             {link != null && (
               <button
-                  className="w-full sm:w-auto rounded-2xl px-4 py-2 font-semibold bg-blue-600 text-white border-blue-700 hover:bg-blue-700/90 transition-all duration-300"
+                  className="w-full sm:w-auto rounded-2xl px-4 py-2 flex items-center gap-2 font-semibold bg-blue-600 text-white border-blue-700 hover:bg-blue-700/90 transition-all duration-300"
                   onClick={() => {
                     window.open(link);
                   }}
               >
-                Visit
+                <BoxArrowUpRight /> Visit
               </button>
             )}
           </div>
