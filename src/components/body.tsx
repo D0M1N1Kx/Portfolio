@@ -147,13 +147,13 @@ export function Body() {
           <span>{t.hero.status}</span>
         </div>
 
-        {/* Profile Avatar with Sapphire Glow */}
-        <div className="relative mb-6 group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 rounded-full blur-lg opacity-40 group-hover:opacity-75 transition duration-500" />
+        {/* Profile Avatar with Sapphire Glow & Clean Floating Bounce */}
+        <div className="relative mb-6 group animate-clean-bounce">
+          <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 rounded-full blur-xl opacity-45 group-hover:opacity-80 transition duration-500" />
           <img
             src="https://avatars.githubusercontent.com/u/98649184?s=400&v=4"
             alt="Milkovics Dominik"
-            className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-[#070b14] shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+            className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-[#070b14] shadow-2xl transition-transform duration-300 group-hover:scale-[1.03]"
           />
         </div>
 

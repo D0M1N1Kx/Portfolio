@@ -7,20 +7,29 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        'clean-bounce': {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-14px)',
+          },
+        },
         'bounce-small': {
           '0%, 100%': {
-            transform: 'translateY(-5%)',
-            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+            transform: 'translateY(-10px)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
           },
           '50%': {
             transform: 'translateY(0)',
-            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
-          }
-        }
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
       },
       animation: {
-        'bounce-small': 'bounce-small 1s infinite'
-      }
+        'clean-bounce': 'clean-bounce 2.2s ease-in-out infinite',
+        'bounce-small': 'bounce-small 1.2s infinite',
+      },
     },
   },
   plugins: [],
