@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProjectCard } from "./projectCard";
 import { SkillCard, type SkillItem } from "./skillCard";
+import { ScrollReveal } from "./scrollReveal";
 import {
   ArrowDown,
   CpuFill,
@@ -213,86 +214,95 @@ export function Body() {
 
       {/* Skills Section */}
       <section id="skills" className="py-12 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-20">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-blue-400 uppercase mb-2">
-            <CpuFill size={13} />
-            <span>{t.skills.tag}</span>
+        <ScrollReveal>
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-blue-400 uppercase mb-2">
+              <CpuFill size={13} />
+              <span>{t.skills.tag}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+              {t.skills.title}
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
+              {t.skills.subtitle}
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            {t.skills.title}
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            {t.skills.subtitle}
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Interactive Filter & Legend */}
-        <div className="flex flex-col items-center justify-center gap-4 mb-10">
-          <div className="inline-flex p-1 rounded-2xl bg-slate-900/80 border border-slate-800/90 backdrop-blur-md">
-            <button
-              type="button"
-              onClick={() => setSkillFilter("all")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
-                skillFilter === "all"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-semibold"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              {t.skills.filterAll} ({allItemsCount})
-            </button>
-            <button
-              type="button"
-              onClick={() => setSkillFilter("fluent")}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
-                skillFilter === "fluent"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-semibold"
-                  : "text-blue-300 hover:text-white"
-              }`}
-            >
-              <LightningChargeFill size={13} className="text-cyan-300" />
-              <span>{t.skills.filterFluent} ({fluentCount})</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setSkillFilter("familiar")}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
-                skillFilter === "familiar"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-semibold"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <ShieldCheck size={14} className="text-slate-400" />
-              <span>{t.skills.filterFamiliar} ({familiarCount})</span>
-            </button>
-          </div>
-
-          {/* Visual Legend Indicator */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)] shrink-0" />
-              <span className="text-slate-300 font-medium">{t.skills.legendBlueLabel}</span>
-              <span>{t.skills.legendBlueText}</span>
+        <ScrollReveal delayMs={100}>
+          <div className="flex flex-col items-center justify-center gap-4 mb-10">
+            <div className="inline-flex p-1 rounded-2xl bg-slate-900/80 border border-slate-800/90 backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setSkillFilter("all")}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+                  skillFilter === "all"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-semibold"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                {t.skills.filterAll} ({allItemsCount})
+              </button>
+              <button
+                type="button"
+                onClick={() => setSkillFilter("fluent")}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+                  skillFilter === "fluent"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-semibold"
+                    : "text-blue-300 hover:text-white"
+                }`}
+              >
+                <LightningChargeFill size={13} className="text-cyan-300" />
+                <span>{t.skills.filterFluent} ({fluentCount})</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setSkillFilter("familiar")}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+                  skillFilter === "familiar"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-semibold"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                <ShieldCheck size={14} className="text-slate-400" />
+                <span>{t.skills.filterFamiliar} ({familiarCount})</span>
+              </button>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-slate-500 shrink-0" />
-              <span className="text-slate-300 font-medium">{t.skills.legendGrayLabel}</span>
-              <span>{t.skills.legendGrayText}</span>
+
+            {/* Visual Legend Indicator */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)] shrink-0" />
+                <span className="text-slate-300 font-medium">{t.skills.legendBlueLabel}</span>
+                <span>{t.skills.legendBlueText}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-slate-500 shrink-0" />
+                <span className="text-slate-300 font-medium">{t.skills.legendGrayLabel}</span>
+                <span>{t.skills.legendGrayText}</span>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Skills Grid */}
+        {/* Skills Grid with Staggered Cascading Reveal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <SkillCard
+            <ScrollReveal
               key={index}
-              items={skill.items}
-              title={skill.title}
-              badge={skill.badge}
-              isMain={skill.isMain}
-              filter={skillFilter}
-              emptyMessage={t.skills.emptyFilter}
-            />
+              delayMs={(index % 3) * 100}
+              className="h-full"
+            >
+              <SkillCard
+                items={skill.items}
+                title={skill.title}
+                badge={skill.badge}
+                isMain={skill.isMain}
+                filter={skillFilter}
+                emptyMessage={t.skills.emptyFilter}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -304,32 +314,40 @@ export function Body() {
 
       {/* Projects Section */}
       <section id="projects" className="py-12 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-20">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-blue-400 uppercase mb-2">
-            <FolderFill size={13} />
-            <span>{t.projects.tag}</span>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-blue-400 uppercase mb-2">
+              <FolderFill size={13} />
+              <span>{t.projects.tag}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+              {t.projects.title}
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
+              {t.projects.subtitle}
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            {t.projects.title}
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            {t.projects.subtitle}
-          </p>
-        </div>
+        </ScrollReveal>
 
+        {/* Projects Grid with Staggered Cascading Reveal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <ProjectCard
+            <ScrollReveal
               key={index}
-              title={project.title}
-              description={project.description}
-              img_path={project.img_path}
-              link={project.link}
-              source={project.source}
-              items={project.items}
-              sourceBtnText={t.projects.sourceBtn}
-              liveBtnText={t.projects.liveDemoBtn}
-            />
+              delayMs={(index % 3) * 120}
+              className="h-full"
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                img_path={project.img_path}
+                link={project.link}
+                source={project.source}
+                items={project.items}
+                sourceBtnText={t.projects.sourceBtn}
+                liveBtnText={t.projects.liveDemoBtn}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </section>
