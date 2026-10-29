@@ -6,7 +6,7 @@ import { LanguageProvider } from './context/LanguageContext'
 function App() {
   return (
     <LanguageProvider>
-      <div className='min-h-screen bg-[#070b14] text-slate-100 relative overflow-hidden selection:bg-blue-600 selection:text-white'>
+      <div className='min-h-screen bg-[#070b14] text-slate-100 relative selection:bg-blue-600 selection:text-white'>
         {/* Cyber Sapphire ambient glow lights */}
         <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
           <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-blue-600/15 rounded-full blur-[130px]" />
@@ -16,7 +16,7 @@ function App() {
 
         <div className="relative z-10 flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pt-16">
             <Body />
           </main>
           <Footer />

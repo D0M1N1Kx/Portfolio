@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Github } from "react-bootstrap-icons";
 import { useLanguage } from "../context/LanguageContext";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { lang, setLang, t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: t.nav.home, href: "#home" },
@@ -14,7 +23,13 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#070b14]/80 border-b border-slate-800/80 transition-all duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#070b14]/55 backdrop-blur-md border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.35)]"
+          : "bg-[#070b14]/30 backdrop-blur-sm border-b border-white/[0.04]"
+      }`}
+    >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 py-3.5">
         <div className="flex items-center justify-between">
           {/* Logo / Profile */}
