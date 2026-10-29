@@ -7,6 +7,8 @@ type ProjectCardParameters = {
   link?: string;
   source?: string;
   items: string[];
+  sourceBtnText?: string;
+  liveBtnText?: string;
 };
 
 export function ProjectCard({
@@ -16,6 +18,8 @@ export function ProjectCard({
   link,
   source,
   items,
+  sourceBtnText = "Source",
+  liveBtnText = "Live Demo",
 }: ProjectCardParameters) {
   return (
     <div className="group flex flex-col justify-between w-full h-full bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-blue-500/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_-10px_rgba(37,99,235,0.25)] text-left">
@@ -62,7 +66,7 @@ export function ProjectCard({
             onClick={() => window.open(source, "_blank", "noreferrer")}
           >
             <Github size={16} />
-            <span>Source</span>
+            <span>{sourceBtnText}</span>
           </button>
         )}
 
@@ -73,7 +77,7 @@ export function ProjectCard({
             onClick={() => window.open(link, "_blank", "noreferrer")}
           >
             <BoxArrowUpRight size={14} />
-            <span>Live Demo</span>
+            <span>{liveBtnText}</span>
           </button>
         )}
       </div>

@@ -9,6 +9,7 @@ type SkillCardParameters = {
   isMain?: boolean;
   items: SkillItem[];
   filter?: "all" | "fluent" | "familiar";
+  emptyMessage?: string;
 };
 
 export function SkillCard({
@@ -17,6 +18,7 @@ export function SkillCard({
   isMain = false,
   items,
   filter = "all",
+  emptyMessage = "No technologies match this filter.",
 }: SkillCardParameters) {
   const filteredItems = items.filter((item) => {
     if (filter === "fluent") return item.fluent;
@@ -51,7 +53,7 @@ export function SkillCard({
       </div>
 
       {filteredItems.length === 0 ? (
-        <p className="text-xs text-slate-500 italic mt-2">No technologies match this filter.</p>
+        <p className="text-xs text-slate-500 italic mt-2">{emptyMessage}</p>
       ) : (
         <ul className="flex flex-wrap gap-2 list-none">
           {filteredItems.map((item, index) => {

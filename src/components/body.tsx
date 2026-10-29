@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   LightningChargeFill,
 } from "react-bootstrap-icons";
+import { useLanguage } from "../context/LanguageContext";
 
 type SkillCategory = {
   title: string;
@@ -17,12 +18,13 @@ type SkillCategory = {
 };
 
 export function Body() {
+  const { lang, t } = useLanguage();
   const [skillFilter, setSkillFilter] = useState<"all" | "fluent" | "familiar">("all");
 
   const skills: SkillCategory[] = [
     {
-      title: "Backend",
-      badge: "⭐ Main Stack",
+      title: t.skills.categories.backend.title,
+      badge: t.skills.categories.backend.badge,
       isMain: true,
       items: [
         { name: "ASP.NET Core Minimal API", fluent: true },
@@ -36,8 +38,8 @@ export function Body() {
       ],
     },
     {
-      title: "Web Development",
-      badge: "🌐 Full-Stack",
+      title: t.skills.categories.web.title,
+      badge: t.skills.categories.web.badge,
       items: [
         { name: "Blazor", fluent: true },
         { name: "HTML/CSS", fluent: true },
@@ -47,8 +49,8 @@ export function Body() {
       ],
     },
     {
-      title: "Programming Languages",
-      badge: "💻 Languages",
+      title: t.skills.categories.languages.title,
+      badge: t.skills.categories.languages.badge,
       items: [
         { name: "C#", fluent: true },
         { name: "C", fluent: true },
@@ -59,8 +61,8 @@ export function Body() {
       ],
     },
     {
-      title: "Mobile Development",
-      badge: "📱 Projects",
+      title: t.skills.categories.mobile.title,
+      badge: t.skills.categories.mobile.badge,
       items: [
         { name: "Flutter", fluent: false },
         { name: "Dart", fluent: false },
@@ -72,18 +74,17 @@ export function Body() {
       ],
     },
     {
-      title: "Tools & Workflow",
-      badge: "🛠️ Tools",
+      title: t.skills.categories.tools.title,
+      badge: t.skills.categories.tools.badge,
       items: [
         { name: "Rider", fluent: true },
-        { name: "CLion", fluent: true },
-        { name: "WebStorm", fluent: true },
         { name: "Git", fluent: true },
         { name: "GitHub", fluent: true },
         { name: "GitLab", fluent: true },
-        { name: "Jenkins", fluent: true },
         { name: "DBeaver CE", fluent: true },
         { name: "Visual Studio Code", fluent: true },
+        { name: "CLion", fluent: true },
+        { name: "WebStorm", fluent: false },
         { name: "ClickUp", fluent: true },
       ],
     },
@@ -91,46 +92,41 @@ export function Body() {
 
   const projects = [
     {
-      title: "Vehicle Cost Tracker",
-      description:
-        "An Android application designed to track and manage vehicle expenses, repairs, refuels, and general costs.",
+      title: t.projects.items.vehicleCostTracker.title,
+      description: t.projects.items.vehicleCostTracker.description,
       img_path: "/images/vehicle-cost-tracker.png",
       source: "https://github.com/D0M1N1Kx/Vehicle-Cost-Tracker",
-      items: ["Mobile App", "Flutter", "Dart"],
+      items: t.projects.items.vehicleCostTracker.tags,
     },
     {
-      title: "Courier App",
-      description:
-        "Courier management web system connected to an MTA server with real-time tracking and assignment features.",
+      title: t.projects.items.courierApp.title,
+      description: t.projects.items.courierApp.description,
       img_path: "/images/courier-app.png",
       source: "https://github.com/D0M1N1Kx/courier-app",
       link: "https://courier.zenithfactory.dev/",
-      items: ["Web", "React + TypeScript", "NestJS", "PostgreSQL"],
+      items: t.projects.items.courierApp.tags,
     },
     {
-      title: "Anonym Chat",
-      description:
-        "A real-time messaging application where users can create rooms and chat completely anonymously with others.",
+      title: t.projects.items.anonymChat.title,
+      description: t.projects.items.anonymChat.description,
       img_path: "/images/anonymchat.png",
       source: "https://github.com/D0M1N1Kx/AnonymChat",
-      items: ["Mobile App", "Flutter", "Dart", "NestJS"],
+      items: t.projects.items.anonymChat.tags,
     },
     {
-      title: "Rycloon",
-      description:
-        "A dedicated social media platform designed for gamers with tailored community features. Working as full-stack developer.",
+      title: t.projects.items.rycloon.title,
+      description: t.projects.items.rycloon.description,
       img_path: "/images/rycloon.png",
       link: "https://rycloon.com/",
-      items: ["Web", "React + TypeScript", "ASP.NET Core", "Node.js", "MySQL"],
+      items: t.projects.items.rycloon.tags,
     },
     {
-      title: "Mines Game",
-      description:
-        "Modern, web-based Minesweeper game built using React and TypeScript with engaging visuals and smooth interactions.",
+      title: t.projects.items.minesGame.title,
+      description: t.projects.items.minesGame.description,
       img_path: "/images/mines-game.png",
       source: "https://github.com/ZenithFactory/mines-game",
       link: "https://minesgame.zenithfactory.dev/",
-      items: ["Web", "React + TypeScript", "Node.js"],
+      items: t.projects.items.minesGame.tags,
     },
   ];
 
@@ -148,7 +144,7 @@ export function Body() {
         {/* Status Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/50 border border-blue-800/50 text-blue-300 text-xs sm:text-sm font-medium mb-8 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Backend Developer • Full-Stack Capability</span>
+          <span>{t.hero.status}</span>
         </div>
 
         {/* Profile Avatar with Sapphire Glow */}
@@ -163,19 +159,32 @@ export function Body() {
 
         {/* Name & Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-          Milkovics{" "}
+          {t.hero.titlePrefix}{" "}
           <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
-            Dominik
+            {t.hero.titleSuffix}
           </span>
         </h1>
 
         <p className="max-w-2xl text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-8">
-          Backend-focused developer specializing in high-performance architecture with{" "}
-          <span className="text-blue-300 font-medium">C# & ASP.NET Core</span>.
-          Experienced across the full stack with{" "}
-          <span className="text-cyan-300 font-medium">Blazor & modern web technologies</span>,
-          plus cross-platform client development in{" "}
-          <span className="text-indigo-300 font-medium">Flutter & React</span>.
+          {lang === "en" ? (
+            <>
+              Backend-focused developer specializing in high-performance architecture with{" "}
+              <span className="text-blue-300 font-medium">C# & ASP.NET Core</span>.
+              Experienced across the full stack with{" "}
+              <span className="text-cyan-300 font-medium">Blazor & modern web technologies</span>,
+              plus cross-platform client development in{" "}
+              <span className="text-indigo-300 font-medium">Flutter & React</span>.
+            </>
+          ) : (
+            <>
+              Backend-fókuszú fejlesztő, aki nagy teljesítményű architektúrákra specializálódott{" "}
+              <span className="text-blue-300 font-medium">C# és ASP.NET Core</span> alapokon.
+              Tapasztalt a teljes stacken{" "}
+              <span className="text-cyan-300 font-medium">Blazorral és modern webes technológiákkal</span>,
+              valamint cross-platform kliensfejlesztéssel{" "}
+              <span className="text-indigo-300 font-medium">Flutterben és Reactben</span>.
+            </>
+          )}
         </p>
 
         {/* Call-to-action buttons */}
@@ -184,7 +193,7 @@ export function Body() {
             href="#skills"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-200"
           >
-            <span>Explore Skills & Tech Stack</span>
+            <span>{t.hero.exploreSkills}</span>
             <ArrowDown size={15} />
           </a>
 
@@ -192,7 +201,7 @@ export function Body() {
             href="#projects"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700/80 hover:border-slate-500 hover:-translate-y-0.5 transition-all duration-200"
           >
-            <span>View Projects</span>
+            <span>{t.hero.viewProjects}</span>
           </a>
         </div>
       </section>
@@ -207,13 +216,13 @@ export function Body() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-blue-400 uppercase mb-2">
             <CpuFill size={13} />
-            <span>Tech Stack & Specialization</span>
+            <span>{t.skills.tag}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Skills & Competencies
+            {t.skills.title}
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            Backend development is my primary focus, backed by solid full-stack web and cross-platform experience.
+            {t.skills.subtitle}
           </p>
         </div>
 
@@ -229,7 +238,7 @@ export function Body() {
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              All Skills ({allItemsCount})
+              {t.skills.filterAll} ({allItemsCount})
             </button>
             <button
               type="button"
@@ -241,7 +250,7 @@ export function Body() {
               }`}
             >
               <LightningChargeFill size={13} className="text-cyan-300" />
-              <span>Fluent / Core ({fluentCount})</span>
+              <span>{t.skills.filterFluent} ({fluentCount})</span>
             </button>
             <button
               type="button"
@@ -253,7 +262,7 @@ export function Body() {
               }`}
             >
               <ShieldCheck size={14} className="text-slate-400" />
-              <span>Project Experience ({familiarCount})</span>
+              <span>{t.skills.filterFamiliar} ({familiarCount})</span>
             </button>
           </div>
 
@@ -261,13 +270,13 @@ export function Body() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)] shrink-0" />
-              <span className="text-slate-300 font-medium">Blue Badge:</span>
-              <span>Fluent / Main Stack (Daily driver, deep proficiency)</span>
+              <span className="text-slate-300 font-medium">{t.skills.legendBlueLabel}</span>
+              <span>{t.skills.legendBlueText}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-slate-500 shrink-0" />
-              <span className="text-slate-300 font-medium">Gray Badge:</span>
-              <span>Project Experience (Hands-on, built real projects)</span>
+              <span className="text-slate-300 font-medium">{t.skills.legendGrayLabel}</span>
+              <span>{t.skills.legendGrayText}</span>
             </div>
           </div>
         </div>
@@ -282,6 +291,7 @@ export function Body() {
               badge={skill.badge}
               isMain={skill.isMain}
               filter={skillFilter}
+              emptyMessage={t.skills.emptyFilter}
             />
           ))}
         </div>
@@ -297,13 +307,13 @@ export function Body() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-blue-400 uppercase mb-2">
             <FolderFill size={13} />
-            <span>Portfolio Highlights</span>
+            <span>{t.projects.tag}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Featured Projects
+            {t.projects.title}
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            A showcase of backend-connected platforms, web services, and mobile applications I've built.
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -317,6 +327,8 @@ export function Body() {
               link={project.link}
               source={project.source}
               items={project.items}
+              sourceBtnText={t.projects.sourceBtn}
+              liveBtnText={t.projects.liveDemoBtn}
             />
           ))}
         </div>

@@ -9,8 +9,11 @@ import {
   MortarboardFill,
   BriefcaseFill,
 } from "react-bootstrap-icons";
+import { useLanguage } from "../context/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer
       id="contact"
@@ -22,23 +25,23 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <span className="w-1.5 h-4 bg-blue-500 rounded-full"></span>
-              <span>About Me</span>
+              <span>{t.footer.aboutTitle}</span>
             </h3>
             <ul className="space-y-3 text-sm text-slate-300 list-none">
               <li className="flex items-center gap-2.5 justify-center md:justify-start">
                 <GeoAltFill className="text-blue-400 shrink-0" size={15} />
-                <span>Subotica, Serbia</span>
+                <span>{t.footer.location}</span>
               </li>
               <li className="flex items-center gap-2.5 justify-center md:justify-start">
                 <BriefcaseFill className="text-blue-400 shrink-0" size={15} />
-                <span>Backend & Full-Stack Developer</span>
+                <span>{t.footer.role}</span>
               </li>
               <li className="flex items-center gap-2.5 justify-center md:justify-start">
                 <MortarboardFill className="text-blue-400 shrink-0" size={15} />
-                <span>Electronics & IT Technician</span>
+                <span>{t.footer.degree}</span>
               </li>
               <li className="text-xs text-slate-400 pl-6 hidden md:block">
-                Technical School "Ivan Sarić"
+                {t.footer.school}
               </li>
             </ul>
           </div>
@@ -47,7 +50,7 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <span className="w-1.5 h-4 bg-cyan-400 rounded-full"></span>
-              <span>Get In Touch</span>
+              <span>{t.footer.contactTitle}</span>
             </h3>
             <ul className="space-y-3 text-sm text-slate-300 list-none">
               <li>
@@ -79,10 +82,10 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <span className="w-1.5 h-4 bg-indigo-500 rounded-full"></span>
-              <span>Connect</span>
+              <span>{t.footer.connectTitle}</span>
             </h3>
             <p className="text-sm text-slate-400 mb-4 max-w-xs">
-              Feel free to connect on social media or check out my open-source repositories.
+              {t.footer.connectDesc}
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -118,9 +121,9 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-800/80 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} Milkovics Dominik. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Milkovics Dominik. {t.footer.rights}</p>
           <p className="flex items-center gap-1.5">
-            <span>Crafted with</span>
+            <span>{t.footer.craftedWith}</span>
             <span className="text-blue-400 font-medium">React</span>
             <span>+</span>
             <span className="text-blue-400 font-medium">TypeScript</span>
