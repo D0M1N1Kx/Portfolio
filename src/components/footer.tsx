@@ -3,7 +3,6 @@ import {
   Linkedin,
   Facebook,
   EnvelopeFill,
-  TelephoneFill,
   ChatDotsFill,
   GeoAltFill,
   MortarboardFill,
@@ -60,15 +59,6 @@ export function Footer() {
                 >
                   <EnvelopeFill className="text-cyan-400 shrink-0" size={15} />
                   <span className="break-all">milkovicsd32@gmail.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+381691238859"
-                  className="flex items-center gap-2.5 justify-center md:justify-start hover:text-blue-400 transition-colors"
-                >
-                  <TelephoneFill className="text-cyan-400 shrink-0" size={15} />
-                  <span>+381 69 123 8859</span>
                 </a>
               </li>
               <li className="flex items-center gap-2.5 justify-center md:justify-start text-slate-400">
