@@ -1,64 +1,134 @@
-import { Github, Linkedin, Facebook } from 'react-bootstrap-icons';
+import {
+  Github,
+  Linkedin,
+  Facebook,
+  EnvelopeFill,
+  TelephoneFill,
+  ChatDotsFill,
+  GeoAltFill,
+  MortarboardFill,
+  BriefcaseFill,
+} from "react-bootstrap-icons";
 
 export function Footer() {
   return (
-    <>
-      <footer className="bg-black pb-4 pt-4 border-t border-blue-600">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-evenly px-4 md:px-8">
-          <div className="text-center">
-            <h1 className="text-xl md:text-2xl font-bold text-blue-500">About Me</h1>
-            <div className="mt-1 space-y-2">
-              <span>📍 Subotica, Serbia</span><br/>
-              <span>🎓 Electronics and Information Technology Technician</span><br/>
-              <span>🏫 Ivan Saric Technicka Skola</span><br/>
-              <span>💼 Full-Stack Developer</span><br/>
-            </div>
+    <footer
+      id="contact"
+      className="relative bg-[#050811] border-t border-slate-800/80 pt-16 pb-12 scroll-mt-10"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          {/* About Column */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-4 bg-blue-500 rounded-full"></span>
+              <span>About Me</span>
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-300 list-none">
+              <li className="flex items-center gap-2.5 justify-center md:justify-start">
+                <GeoAltFill className="text-blue-400 shrink-0" size={15} />
+                <span>Subotica, Serbia</span>
+              </li>
+              <li className="flex items-center gap-2.5 justify-center md:justify-start">
+                <BriefcaseFill className="text-blue-400 shrink-0" size={15} />
+                <span>Backend & Full-Stack Developer</span>
+              </li>
+              <li className="flex items-center gap-2.5 justify-center md:justify-start">
+                <MortarboardFill className="text-blue-400 shrink-0" size={15} />
+                <span>Electronics & IT Technician</span>
+              </li>
+              <li className="text-xs text-slate-400 pl-6 hidden md:block">
+                Technical School "Ivan Sarić"
+              </li>
+            </ul>
           </div>
-          <div className="text-center">
-            <h1 className="text-xl md:text-2xl font-bold text-blue-500">Contact</h1>
-            <div className="mt-1 space-y-2">
-              <span className="break-all">✉️ milkovicsd32@gmail.com</span><br/>
-              <span>📱 +381 69 123 8859</span><br/>
-              <span>💬 dominik17_.</span><br/>
-            </div>
+
+          {/* Contact Column */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-4 bg-cyan-400 rounded-full"></span>
+              <span>Get In Touch</span>
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-300 list-none">
+              <li>
+                <a
+                  href="mailto:milkovicsd32@gmail.com"
+                  className="flex items-center gap-2.5 justify-center md:justify-start hover:text-blue-400 transition-colors"
+                >
+                  <EnvelopeFill className="text-cyan-400 shrink-0" size={15} />
+                  <span className="break-all">milkovicsd32@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+381691238859"
+                  className="flex items-center gap-2.5 justify-center md:justify-start hover:text-blue-400 transition-colors"
+                >
+                  <TelephoneFill className="text-cyan-400 shrink-0" size={15} />
+                  <span>+381 69 123 8859</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5 justify-center md:justify-start text-slate-400">
+                <ChatDotsFill className="text-cyan-400 shrink-0" size={15} />
+                <span>Discord: dominik17_.</span>
+              </li>
+            </ul>
           </div>
-          <div className="text-center">
-            <h1 className="text-xl md:text-2xl font-bold text-blue-500">Follow Me</h1>
-            <div className="flex flex-row gap-4 justify-center mt-1">
+
+          {/* Socials Column */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-4 bg-indigo-500 rounded-full"></span>
+              <span>Connect</span>
+            </h3>
+            <p className="text-sm text-slate-400 mb-4 max-w-xs">
+              Feel free to connect on social media or check out my open-source repositories.
+            </p>
+            <div className="flex items-center gap-3">
               <a
-                  href="https://github.com/D0M1N1Kx"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-3 bg-blue-600/10 border border-blue-700 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                href="https://github.com/D0M1N1Kx"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub Profile"
+                className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-blue-500/50 hover:bg-blue-950/40 hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(37,99,235,0.3)] transition-all duration-200"
               >
-                <Github size={22} />
+                <Github size={20} />
               </a>
               <a
-                  href="https://www.linkedin.com/in/dominik-milkovics-ab0359341/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-3 bg-blue-600/10 border border-blue-700 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                href="https://www.linkedin.com/in/dominik-milkovics-ab0359341/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn Profile"
+                className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-blue-500/50 hover:bg-blue-950/40 hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(37,99,235,0.3)] transition-all duration-200"
               >
-                <Linkedin size={22} />
+                <Linkedin size={20} />
               </a>
               <a
-                  href="https://www.facebook.com/dominik.milkovics.2025/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-3 bg-blue-600/10 border border-blue-700 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                href="https://www.facebook.com/dominik.milkovics.2025/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook Profile"
+                className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-blue-500/50 hover:bg-blue-950/40 hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(37,99,235,0.3)] transition-all duration-200"
               >
-                <Facebook size={22} />
+                <Facebook size={20} />
               </a>
             </div>
-            <br />
           </div>
         </div>
-        <div className="h-0.5 bg-blue-800 mx-8 mb mt-10"></div>
-        <br />
-        <p className="text-gray-600 text-center">
-          © 2025 Milkovics Dominik. Built with React + TypeScript{" "}
-        </p>
-      </footer>
-    </>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-800/80 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+          <p>© {new Date().getFullYear()} Milkovics Dominik. All rights reserved.</p>
+          <p className="flex items-center gap-1.5">
+            <span>Crafted with</span>
+            <span className="text-blue-400 font-medium">React</span>
+            <span>+</span>
+            <span className="text-blue-400 font-medium">TypeScript</span>
+            <span>+</span>
+            <span className="text-cyan-400 font-medium">Tailwind CSS</span>
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }
